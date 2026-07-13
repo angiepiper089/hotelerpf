@@ -23,7 +23,6 @@ $error = flash('error');
       <i class="bi bi-building"></i>
       <h1>Grand Horizon Hotel ERP</h1>
       <small class="text-muted">Business Process &amp; ERP Systems &middot; Group Prototype</small>
-      <div class="small text-danger mt-1">[deploy test: hotelerpf]</div>
     </div>
 
     <?php if ($error): ?>
