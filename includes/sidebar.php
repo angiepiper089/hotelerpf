@@ -28,17 +28,17 @@ $navItems = [
     <span>Grand Horizon <small>Hotel ERP</small></span>
   </div>
   <ul class="app-sidebar-nav">
-    <?php foreach ($navItems as $item): ?>
-      <?php if (!in_array($role, $item['roles'], true)) continue; ?>
+    <?php foreach ($navItems as $navItem): ?>
+      <?php if (!in_array($role, $navItem['roles'], true)) continue; ?>
       <?php
-        $active = ($currentDir === $item['match'] || $current === $item['match']);
-        if ($active && isset($item['files'])) {
-            $active = in_array($current, $item['files'], true);
+        $active = ($currentDir === $navItem['match'] || $current === $navItem['match']);
+        if ($active && isset($navItem['files'])) {
+            $active = in_array($current, $navItem['files'], true);
         }
       ?>
       <li>
-        <a href="<?= basePath() . $item['url'] ?>" class="<?= $active ? 'active' : '' ?>">
-          <i class="bi <?= $item['icon'] ?>"></i> <span><?= e($item['label']) ?></span>
+        <a href="<?= basePath() . $navItem['url'] ?>" class="<?= $active ? 'active' : '' ?>">
+          <i class="bi <?= $navItem['icon'] ?>"></i> <span><?= e($navItem['label']) ?></span>
         </a>
       </li>
     <?php endforeach; ?>
